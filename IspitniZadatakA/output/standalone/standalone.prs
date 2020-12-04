@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings built="true" last_build_time="1607079855673">
+	<dependencies>
+		<source_file last_build_time="1607077265202" path="src/main.a"/>
+		<source_file last_build_time="1607079854282" path="src/Assignment01.a"/>
+	</dependencies>
+</settings>

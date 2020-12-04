@@ -1,0 +1,62 @@
+============= BUILDING STARTED ============
+  Project: IspitniZadatakA
+===========================================
+Assembling .a and .s files...
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\IspitniZadatakA\output\standalone\src\Assignment01.O
+C:/CirrusDSP/clide/workspace/IspitniZadatakA/src/Assignment01.a
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/IspitniZadatakA/src/Assignment01.a
+ --debug
+ -c
+ -s
+ -e
+ --cdl
+ -D_TOOLS_VERSION_=0x0701
+ -D_SLOT_=0
+ -D_OVLY_=standalone
+ -D_OVLY_REVISION_=020000
+ -D_VERSION_=00
+ -D_DSP_=a
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -D_TARGET_FAMILY_=crystal32
+ -D_MUI_VERSION_=020000
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/IspitniZadatakA/inc/
+ -lC:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/src/Assignment01.lst
+ -oC:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/src/Assignment01.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+Linking files...
+C:/CirrusDSP/bin/clink
+ -oC:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.img
+ -fC:/CirrusDSP/crystal32/memory_maps/v00.mem.xml
+ --output_type=RAM
+ --overlay_type=standalone
+ -lC:/CirrusDSP/lib/
+ -lC:/CirrusDSP/lib/dsplib
+ -lC:/CirrusDSP/lib/dsplib/crystal32/
+C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/src/Assignment01.O
+C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/src/main.O
+Creating .uld file...
+C:/CirrusDSP/bin/lnkuld
+ -ja
+ C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.img
+ C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.uld
+     [exec] 
+     [exec] Reading file: C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.img ...
+     [exec] 	Processed 28 line(s).
+     [exec] 
+     [exec] Writing output to file: C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.uld ...
+     [exec] 
+     [exec] Done!
+     [exec] 
+     [exec] Writing output to file: C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.uldb ...
+     [exec] 
+     [exec] Done!
+     [exec] 
+     [exec] Writing output to file: C:/CirrusDSP/clide/workspace/IspitniZadatakA/output/standalone/IspitniZadatakA.uldc ...
+
+BUILD SUCCESSFUL
+Total time: 1 second
