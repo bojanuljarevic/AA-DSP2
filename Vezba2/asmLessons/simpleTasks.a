@@ -1,0 +1,318 @@
+################################################################################
+##*/**
+##** @file simpleTasks.a
+##**
+##** Module: asmLessons
+##** Description:  Simple exercise
+##** $Source: $
+##** $Revision: 1.0 $
+##** $Date: <date> $
+##** $Author: <student name> $
+##**
+##**/
+################################################################################
+_simpleTasks_a_
+
+	.public X_S_simpleTask
+
+#---------------------------------------------------------------------------
+# Allocate X_BX_Buffer1 in X memory (length is 128, need to be
+# aligned to buffer size).
+
+	# Your code here...
+ .xdata_ovly at (0x380)			# random multiple of 0x80 (128 * 7 = 896 == 0x380)
+X_BX_Buffer1 .bss (0x80)
+#---------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------
+# Allocate X_BY_Buffer2 in Y memory (length is 128).
+	
+	# Your code here...
+
+ .ydata_ovly at (0x380)
+X_BY_Buffer2 .bss (0x80)
+
+#---------------------------------------------------------------------------
+
+
+
+simpleTasks_code    .code_ovly
+################################################################################
+
+################################################################################
+##*/**
+##** @Author	<student name>
+##** @Date		<date>
+##**
+##** Function:
+##** X_S_init
+##**
+##** @param - none
+##**
+##** @return - nothing
+##**
+##** Trashes: a0, a1, a2, b0, x0, y0, y1, i0, i1, i4, i5
+##** Comment: Initialize X_BX_Buffer1 and X_BY_Buffer2
+##**
+##** E-mail:	<email>
+##**/
+##*void X_S_init()
+##*{
+##*}
+################################################################################
+X_S_init
+
+	# Set a0 to zero
+	
+	a0=0
+
+	# Load 1 to a1
+
+	uhalfword(a1h) = (0x1)
+	
+	# Load X_BX_Buffer1 to i0
+
+	i0 = (X_BX_Buffer1)
+	
+	# In HW loop store a0 to xmem[i0], increment i0, and add a1 to a0
+	
+	do(0x80),>Loop
+%Loop:    	xmem[i0] = a0; i0+=1; a0 = a0 + a1   
+
+	# Load X_BX_Buffer1 to i0
+
+	i0 = (X_BX_Buffer1)
+
+	# Set nm0 to 0x6003
+
+	nm0 = (0x6003)
+
+	# Load X_BY_Buffer2 to i4
+	
+	i4 = (X_BY_Buffer2)
+
+	# In HW loop:
+	#    - load xmem[i0] to a0 and increment i0 with n
+	#    - store a0 to ymem[i4] and increment i4
+	
+	do(0x80),>Loop
+  		a0 = xmem[i0]; i0+=n;
+%Loop:		ymem[i4] = a0; i4+=1 
+
+
+	# Set nm0 to 0
+	
+	nm0 = (0)
+
+X_S_init_end:
+#-------------------------------------------------------------------------------
+  ret
+
+################################################################################
+##*/**
+##** @Author	<student name>
+##** @Date		<date>
+##**
+##** Function:
+##** X_S_mean
+##**
+##** @param - none
+##**
+##** @return - nothing
+##**
+##** Trashes: a0, a1, a2, b0, x0, y0, y1, i0, i1, i4, i5
+##** Comment: Calculate mean values between elements of X_BX_Buffer1 and X_BY_Buffer2
+##**
+##** E-mail:	<email>
+##**/
+##*void X_S_mean ()
+##*{
+##*}
+################################################################################
+X_S_mean
+
+	# Load X_BX_Buffer1 to i0
+	
+	i0 = (X_BX_Buffer1)
+
+	# Load X_BY_Buffer2 to i4
+
+	i4 = (X_BY_Buffer2)
+	
+	# Set mr_sr to 0x1
+
+	mr_sr = (0x1)
+	
+	# In HW loop:
+	#    - load xmem[i0] to a0
+	#    - load ymem[i4] to b0 and increment i4
+	#    - Put sum of a0 and a1 to a0
+	# 	  - store a0 to xmem[i0] and increment i0
+	
+	do(0x80),>Loop
+		a0 = xmem[i0]
+		b0 = ymem[i4]; i4+=1
+		a0 = a0 + b0
+		nop
+%Loop 		xmem[i0] = a0; i0+=1
+
+
+	# Set mr_sr to 0x0
+
+	mr_sr = (0x0)
+
+X_S_mean_end:
+#-------------------------------------------------------------------------------
+  ret
+
+################################################################################
+##*/**
+##** @Author	<student name>
+##** @Date		<date>
+##**
+##** Function:
+##** X_S_mean
+##**
+##** @param - i0 - input buffer address
+##**    	- i1 - buffer length
+##**
+##** @return - a0 - median value
+##**
+##** Trashes: a0, a1, a2, b0, x0, y0, y1, i0, i1, i4, i5
+##** Comment: Simple tasks
+##**
+##** E-mail:	<email>
+##**/
+##*void X_S_mean ()
+##*{
+##*}
+################################################################################
+X_S_median
+
+	# Your code here...
+	
+# 1. dio : sortiranje
+	
+	b0 = i0					# adr. i-tog elementa
+	b1 = i0					# adr. j-tog elementa
+	a0 = i0					# adr. k-tog elementa
+	halfword(a2) = (0x01)   			# + 1
+	
+	do(i1),>OuterLoop				# for(i = 0; i < n(0x80); i++)
+		b2 = b0				# k = i
+		a3 = i1 				# a3 je placeholder za 0x80(duzinu niza)
+		b3 = i0				# b3 <= adr. prvog elementa (u ovoj promjenjivoj racunamo velicinu unutrasnje petlje)
+		b3 = b3 + a3			# b3 <= adr zadnjeg elementa
+		b3 = b3 - b0			# b3 <= b3 - br. obradjenih elemenata (b0 == adr. i-tog)
+		b3 = b3 - a2			# b3 <= b3 - 1 
+		i2 = b3				# prebacujemo vrijednost b3 u indeksni				
+						# i tako dobijamo velicinu unutrasnje petlje (i+1 : n)
+		b1 = b0 + a2			# j = i + 1
+		if(a==0) jmp >EndLoop		# potrebno radi zadnje iteracije kada i2 ode u ffff...
+		do(i2),>InnerLoop			# for(j = i+1; j < n; j++)
+			# PROVJERA VECEG
+			i3 = b1   		# adresa j-tog elementa u indeksni
+			i4 = b2			# adresa k-tog elementa u indeksni
+			a0 = ymem[i3] 		# dobavljanje j-tog elementa iz Y memorije
+			a3 = ymem[i4] 		# dobavljanje k-tog elementa iz Y memorije
+			a0-a3
+			if(a>0) jmp >InnerLoop	# if (Y[j] > Y[k])  
+			b2=b1			# k = j
+%InnerLoop: b1 = b1 + a2				# j++
+			# SWAP
+			i3 = b0			# adresa i-tog u indeksni
+			i4 = b2			# adresa k-tog u indeksni
+			a0 = ymem[i3] 		# swap procedura, moraju 2 temp 
+			a3 = ymem[i4] 		# zbog nemogucnosti dvostrukog pristupa memoriji
+			ymem[i3] = a3	
+			ymem[i4] = a0		# Y[i] <=> Y[k]
+%OuterLoop: b0 = b0 + a2				# i++ 
+
+%EndLoop:
+
+# 2. dio : srednja vrijednost sredisnjih elemenata
+
+	i0 = (X_BY_Buffer2)				# adresa buffera 
+	b0 = i0					# prebacivanje u b0 radi lakseg racunanja
+	b1 = i1					# velicina buffera u b1
+	b1 = b1 >> 1				# b1 / 2 -> pozicija sredisnjeg elementa (N/2)
+	b0 = b0 + b1				# adr buffera + N/2 -> tacna adresa sredisnjeg elementa
+	i0 = b0					# vracamo u indeksni
+	nop
+	a0 = ymem[i0]				# dobavljanje sredisnjeg elementa
+	i0-=1					
+	a1 = ymem[i0]				# dobavljanje drugog sredisnjeg elementa Y[(N/2)-1]
+	a0 = a0 + a1				# sumiranje elemenata
+	a0 = a0 >> 1				# dijelimo ih sa 2 i dobijamo vrijednost medijane niza
+
+	
+X_S_median_end:
+#-------------------------------------------------------------------------------
+  ret
+################################################################################
+##*/**
+##** @Author
+##** @Date
+##**
+##** Function:
+##** X_S_simpleTask
+##**
+##** @param - none
+##**
+##** @return - nothing
+##**
+##** Trashes: a0, a1, a2, b0, x0, y0, y1, i0, i1, i4, i5
+##** Comment: Simple tasks
+##**
+##** E-mail:
+##**/
+##*void X_S_simpleTask()
+##*{
+##*}
+################################################################################
+X_S_simpleTask
+
+	#---------------------------------------------------------------------------
+	# Call X_S_init
+
+	# Your code here...
+	
+	call X_S_init
+	nop
+
+	#---------------------------------------------------------------------------
+
+	#---------------------------------------------------------------------------
+	# Call X_S_mean
+
+	# Your code here..
+	
+	call X_S_mean
+	nop
+
+	#---------------------------------------------------------------------------
+
+
+	#---------------------------------------------------------------------------
+	# Put X_BY_Buffer2 to i0
+	
+	i0 = (X_BY_Buffer2)
+
+	# Put 128 to i1
+	
+	i1 = (0x0080)
+	
+
+	# Call X_S_median
+	
+	call X_S_median
+	nop
+
+	#---------------------------------------------------------------------------
+
+X_S_simpleTask_end:
+#-------------------------------------------------------------------------------
+  ret
+
+
+
