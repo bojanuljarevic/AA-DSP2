@@ -1,0 +1,720 @@
+1     	 0000					.public _dataLeft
+2     	 0000					.public _dataRight
+3     	 0000					.public _enabled
+4     	 0000					.public _headroom
+5     	 0000					.public _headroom_gain
+6     	 0000					.public _input_gain
+7     	 0000					.public _output_gain
+8     	 0000					.public _sampleBuffer
+9     	 0000					.public _samples
+10    	 0000					.public _selected_mode
+11    	 0000					.public _tremoloBuffer
+12    	 0000					.public _tremoloLeftIterator
+13    	 0000					.public _tremoloRightIterator
+14    	 0000					.extern _calculate_gain
+15    	 0000					.extern _cl_sin
+16    	 0000					.public _init
+17    	 0000					.public _lfo
+18    	 0000					.extern _load_tremolo
+19    	 0000					.public _processBlock
+20    	 0000					.public _processing
+21    	 0000					.public _resetIterators
+22    	 0000					.extern __mul_sat_laccum
+23    	 0000					.extern __laccum_sat_accum
+24    						X_samples	.xdata_ovly
+24     >> start of macro: .xdata_ovly
+1+    									seg_single X_samples, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X_samples" != "" ) & defined( ___SegStart_X_X_samples )
+2+    						X_samples    segment
+3+    						  .else
+4+    						X_samples    segment "X_OVLY"
+5+    							.if "X_samples" != ""
+6+    	 0000				___SegStart_X_X_samples
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+25    						S_samples_0	.struct
+26    						_sampleLeftIterator	.dw (0x0)
+27    						_sampleRightIterator	.dw (0x0)
+28    						_sampleCenterIterator	.dw (0x0)
+29    						_sampleLSIterator	.dw (0x0)
+30    						_sampleRSIterator	.dw (0x0)
+31    							.endstruct
+32    						
+33    						Y_dataRight	.ydata_ovly
+33     >> start of macro: .ydata_ovly
+1+    									seg_single Y_dataRight, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_dataRight" != "" ) & defined( ___SegStart_Y_Y_dataRight )
+2+    						Y_dataRight    segment
+3+    						  .else
+4+    						Y_dataRight    segment "Y_OVLY"
+5+    							.if "Y_dataRight" != ""
+6+    	 0000				___SegStart_Y_Y_dataRight
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+34    						S_dataRight_0	.struct
+35    						_numChannels	.dw (0x0)
+36    						_LFO_frequency	.dw (0x0)
+37    						_depth	.dw (0x0)
+38    						_waveform	.dw (0x0)
+39    						_lfoPhase	.dw (0x0)
+40    						_inverseSampleRate	.dw (0x0)
+41    							.endstruct
+42    						
+43    						X__extractedConst_0_9	.xdata_ovly
+43     >> start of macro: .xdata_ovly
+1+    									seg_single X__extractedConst_0_9, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X__extractedConst_0_9" != "" ) & defined( ___SegStart_X_X__extractedConst_0_9 )
+2+    						X__extractedConst_0_9    segment
+3+    						  .else
+4+    						X__extractedConst_0_9    segment "X_OVLY"
+5+    							.if "X__extractedConst_0_9" != ""
+6+    	 0000				___SegStart_X_X__extractedConst_0_9
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+44    	 0000				__extractedConst_0_9
+45    	 0000					.dw  (0x7fffffff)
+	 0000	 7FFFFFFF	 
+46    						X__extractedConst_1_2	.xdata_ovly
+46     >> start of macro: .xdata_ovly
+1+    									seg_single X__extractedConst_1_2, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X__extractedConst_1_2" != "" ) & defined( ___SegStart_X_X__extractedConst_1_2 )
+2+    						X__extractedConst_1_2    segment
+3+    						  .else
+4+    						X__extractedConst_1_2    segment "X_OVLY"
+5+    							.if "X__extractedConst_1_2" != ""
+6+    	 0000				___SegStart_X_X__extractedConst_1_2
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+47    	 0000				__extractedConst_1_2
+48    	 0000					.dw  (0x3d70a3d7)
+	 0000	 3D70A3D7	 
+49    						X__extractedConst_2_2	.xdata_ovly
+49     >> start of macro: .xdata_ovly
+1+    									seg_single X__extractedConst_2_2, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X__extractedConst_2_2" != "" ) & defined( ___SegStart_X_X__extractedConst_2_2 )
+2+    						X__extractedConst_2_2    segment
+3+    						  .else
+4+    						X__extractedConst_2_2    segment "X_OVLY"
+5+    							.if "X__extractedConst_2_2" != ""
+6+    	 0000				___SegStart_X_X__extractedConst_2_2
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+50    	 0000				__extractedConst_2_2
+51    	 0000					.dw  (0x7d70a3d7)
+	 0000	 7D70A3D7	 
+52    						Y_dataLeft	.ydata_ovly
+52     >> start of macro: .ydata_ovly
+1+    									seg_single Y_dataLeft, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_dataLeft" != "" ) & defined( ___SegStart_Y_Y_dataLeft )
+2+    						Y_dataLeft    segment
+3+    						  .else
+4+    						Y_dataLeft    segment "Y_OVLY"
+5+    							.if "Y_dataLeft" != ""
+6+    	 0000				___SegStart_Y_Y_dataLeft
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+53    	 0000				(null)	 0000	 00000000	 
+53    	 0001				(null)	 0001	 00000000	 
+53    	 0002				(null)	 0002	 00000000	 
+53    	 0003				(null)	 0003	 00000000	 
+53    	 0004				(null)	 0004	 00000000	 
+53    	 0005				(null)	 0005	 00000000	 
+53    						_dataLeft S_dataRight_0
+54    						
+55    						Y_dataRight	.ydata_ovly
+55     >> start of macro: .ydata_ovly
+1+    									seg_single Y_dataRight, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_dataRight" != "" ) & defined( ___SegStart_Y_Y_dataRight )
+2+    						Y_dataRight    segment
+3+    						  .else
+4+    						Y_dataRight    segment "Y_OVLY"
+5+    							.if "Y_dataRight" != ""
+6+    						___SegStart_Y_Y_dataRight
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+56    	 0000				(null)	 0000	 00000000	 
+56    	 0001				(null)	 0001	 00000000	 
+56    	 0002				(null)	 0002	 00000000	 
+56    	 0003				(null)	 0003	 00000000	 
+56    	 0004				(null)	 0004	 00000000	 
+56    	 0005				(null)	 0005	 00000000	 
+56    						_dataRight S_dataRight_0
+57    						
+58    						Y_enabled	.ydata_ovly
+58     >> start of macro: .ydata_ovly
+1+    									seg_single Y_enabled, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_enabled" != "" ) & defined( ___SegStart_Y_Y_enabled )
+2+    						Y_enabled    segment
+3+    						  .else
+4+    						Y_enabled    segment "Y_OVLY"
+5+    							.if "Y_enabled" != ""
+6+    	 0000				___SegStart_Y_Y_enabled
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+59    	 0000				_enabled
+60    	 0000					.dw  (0x1)
+	 0000	 00000001	 
+61    						X_headroom	.xdata_ovly
+61     >> start of macro: .xdata_ovly
+1+    									seg_single X_headroom, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X_headroom" != "" ) & defined( ___SegStart_X_X_headroom )
+2+    						X_headroom    segment
+3+    						  .else
+4+    						X_headroom    segment "X_OVLY"
+5+    							.if "X_headroom" != ""
+6+    	 0000				___SegStart_X_X_headroom
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+62    	 0000				_headroom
+63    	 0000					.bss (0x1)
+64    						Y_headroom_gain	.ydata_ovly
+64     >> start of macro: .ydata_ovly
+1+    									seg_single Y_headroom_gain, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_headroom_gain" != "" ) & defined( ___SegStart_Y_Y_headroom_gain )
+2+    						Y_headroom_gain    segment
+3+    						  .else
+4+    						Y_headroom_gain    segment "Y_OVLY"
+5+    							.if "Y_headroom_gain" != ""
+6+    	 0000				___SegStart_Y_Y_headroom_gain
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+65    	 0000				_headroom_gain
+66    	 0000					.bss (0x1)
+67    						Y_input_gain	.ydata_ovly
+67     >> start of macro: .ydata_ovly
+1+    									seg_single Y_input_gain, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_input_gain" != "" ) & defined( ___SegStart_Y_Y_input_gain )
+2+    						Y_input_gain    segment
+3+    						  .else
+4+    						Y_input_gain    segment "Y_OVLY"
+5+    							.if "Y_input_gain" != ""
+6+    	 0000				___SegStart_Y_Y_input_gain
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+68    	 0000				_input_gain
+69    	 0000					.bss (0x1)
+70    						Y_output_gain	.ydata_ovly
+70     >> start of macro: .ydata_ovly
+1+    									seg_single Y_output_gain, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_output_gain" != "" ) & defined( ___SegStart_Y_Y_output_gain )
+2+    						Y_output_gain    segment
+3+    						  .else
+4+    						Y_output_gain    segment "Y_OVLY"
+5+    							.if "Y_output_gain" != ""
+6+    	 0000				___SegStart_Y_Y_output_gain
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+71    	 0000				_output_gain
+72    	 0000					.bss (0x1)
+73    						X_sampleBuffer	.xdata_ovly
+73     >> start of macro: .xdata_ovly
+1+    									seg_single X_sampleBuffer, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X_sampleBuffer" != "" ) & defined( ___SegStart_X_X_sampleBuffer )
+2+    						X_sampleBuffer    segment
+3+    						  .else
+4+    						X_sampleBuffer    segment "X_OVLY"
+5+    							.if "X_sampleBuffer" != ""
+6+    	 0000				___SegStart_X_X_sampleBuffer
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+74    	 0000				_sampleBuffer
+75    	 0000					.bss (0x80)
+76    						X_samples	.xdata_ovly
+76     >> start of macro: .xdata_ovly
+1+    									seg_single X_samples, "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "X_samples" != "" ) & defined( ___SegStart_X_X_samples )
+2+    						X_samples    segment
+3+    						  .else
+4+    						X_samples    segment "X_OVLY"
+5+    							.if "X_samples" != ""
+6+    						___SegStart_X_X_samples
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+77    	 0000				(null)	 0000	 00000000	 
+77    	 0001				(null)	 0001	 00000000	 
+77    	 0002				(null)	 0002	 00000000	 
+77    	 0003				(null)	 0003	 00000000	 
+77    	 0004				(null)	 0004	 00000000	 
+77    						_samples S_samples_0
+78    						
+79    						Y_selected_mode	.ydata_ovly
+79     >> start of macro: .ydata_ovly
+1+    									seg_single Y_selected_mode, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_selected_mode" != "" ) & defined( ___SegStart_Y_Y_selected_mode )
+2+    						Y_selected_mode    segment
+3+    						  .else
+4+    						Y_selected_mode    segment "Y_OVLY"
+5+    							.if "Y_selected_mode" != ""
+6+    	 0000				___SegStart_Y_Y_selected_mode
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+80    	 0000				_selected_mode
+81    	 0000					.dw  (0x1)
+	 0000	 00000001	 
+82    						Y_tremoloBuffer	.ydata_ovly
+82     >> start of macro: .ydata_ovly
+1+    									seg_single Y_tremoloBuffer, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_tremoloBuffer" != "" ) & defined( ___SegStart_Y_Y_tremoloBuffer )
+2+    						Y_tremoloBuffer    segment
+3+    						  .else
+4+    						Y_tremoloBuffer    segment "Y_OVLY"
+5+    							.if "Y_tremoloBuffer" != ""
+6+    	 0000				___SegStart_Y_Y_tremoloBuffer
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+83    	 0000				_tremoloBuffer
+84    	 0000					.bss (0x20)
+85    						Y_tremoloLeftIterator	.ydata_ovly
+85     >> start of macro: .ydata_ovly
+1+    									seg_single Y_tremoloLeftIterator, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_tremoloLeftIterator" != "" ) & defined( ___SegStart_Y_Y_tremoloLeftIterator )
+2+    						Y_tremoloLeftIterator    segment
+3+    						  .else
+4+    						Y_tremoloLeftIterator    segment "Y_OVLY"
+5+    							.if "Y_tremoloLeftIterator" != ""
+6+    	 0000				___SegStart_Y_Y_tremoloLeftIterator
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+86    	 0000				_tremoloLeftIterator
+87    	 0000					.dw _tremoloBuffer
+	 0000	 00000000	 
+88    						Y_tremoloRightIterator	.ydata_ovly
+88     >> start of macro: .ydata_ovly
+1+    									seg_single Y_tremoloRightIterator, "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "Y_tremoloRightIterator" != "" ) & defined( ___SegStart_Y_Y_tremoloRightIterator )
+2+    						Y_tremoloRightIterator    segment
+3+    						  .else
+4+    						Y_tremoloRightIterator    segment "Y_OVLY"
+5+    							.if "Y_tremoloRightIterator" != ""
+6+    	 0000				___SegStart_Y_Y_tremoloRightIterator
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+89    	 0000				_tremoloRightIterator
+90    	 0000					.dw _tremoloBuffer+16
+	 0000	 00000010	 
+91    							.code_ovly
+91     >> start of macro: .code_ovly
+1+    									seg_single , "CODE_OVLY", CODE
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_CODE_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "CODE_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_CODE_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .code_ovly
+92    						
+93    						
+94    						
+95    	 0000				_init:			/* LN: 37 | CYCLE: 0 | RULES: () */ 
+96    	 0000	 B0090031		i1 = i0			# LN: 41 | 
+97    	 0001	 88040000		a0 = xmem[__extractedConst_0_9 + 0]			# LN: 41 | 
+98    	 0002	 02094DC1		i1 += 1; a1 = 0			# LN: 41, 44 | 
+99    	 0003	 B0090038		i4 = i0			# LN: 42 | 
+100   	 0004	 98D40001		ymem[i1] = a0h			# LN: 41 | 
+101   	 0005	 022C7FFF		i4 += 2			# LN: 42 | 
+102   	 0006	 88040000		a0 = xmem[__extractedConst_0_9 + 0]			# LN: 42 | 
+103   	 0007	 98D40004		ymem[i4] = a0h			# LN: 42 | 
+104   	 0008	 81050003		i1 = i0 + (0x3)			# LN: 43 | 
+105   	 0009	 884A0001		uhalfword(a0) = (0x1)			# LN: 43 | 
+106   	 000A	 98D40001		ymem[i1] = a0h			# LN: 43 | 
+107   	 000B	 81050004		i1 = i0 + (0x4)			# LN: 44 | 
+108   	 000C	 99D40001		ymem[i1] = a1h			# LN: 44 | 
+109   	 000D	 80050005		i0 = i0 + (0x5)			# LN: 45 | 
+110   	 000E	 884AAEC3		uhalfword(a0) = (0xaec3)			# LN: 45 | 
+111   	 000F	 98D40000		ymem[i0] = a0h			# LN: 45 | 
+112   	 0010	 81880000		ret			# LN: 46 | 
+113   						
+114   						
+115   						
+116   	 0011				_lfo:			/* LN: 49 | CYCLE: 0 | RULES: () */ 
+117   	 0011	 8C4A0002		uhalfword(b0) = (0x2)			# LN: 53 | 
+118   	 0012	 00004F21		a1 - b0			# LN: 53 | 
+119   	 0013	 84080024		if (a == 0) jmp (case_0)			# LN: 53 | 
+120   	 0014	 8C4A0003		uhalfword(b0) = (0x3)			# LN: 53 | 
+121   	 0015	 00004F21		a1 - b0			# LN: 53 | 
+122   	 0016	 84080047		if (a == 0) jmp (case_1)			# LN: 53 | 
+123   	 0017	 8C4A0004		uhalfword(b0) = (0x4)			# LN: 53 | 
+124   	 0018	 00004F21		a1 - b0			# LN: 53 | 
+125   	 0019	 8408004E		if (a == 0) jmp (case_2)			# LN: 53 | 
+126   	 001A	 00004E00		a0 = a0 << 1			# LN: 104 | 
+127   	 001B	 80880000		call (_cl_sin)			# LN: 104 | 
+128   	 001C	 00004C01		a1 =+ a0			# LN: 104 | 
+129   	 001D	 8C7A4000		b0 = (0x4000)			# LN: 104 | 
+130   	 001E	 00004C20		a0 =+ b0			# LN: 104 | 
+131   	 001F	 80880000		call (__mul_sat_laccum)			# LN: 104 | 
+132   	 0020	 80880000		call (__laccum_sat_accum)			# LN: 104 | 
+133   	 0021	 00004420		a0 = a0 + b0			# LN: 104 | 
+134   	 0022	 48487FFF		a0 = a0			# LN: 104 | 
+135   	 0023	 8008006E		jmp (__epilogue_266)			# LN: 104 | 
+136   	 0024				case_0:			/* LN: 57 | CYCLE: 0 | RULES: () */ 
+137   	 0024	 897A2000		a1 = (0x2000)			# LN: 59 | 
+138   	 0025	 00004F08		a0 - a1			# LN: 59 | 
+139   	 0026	 84C80030		if (a >= 0) jmp (else_0)			# LN: 59 | 
+140   	 0027	 804A0002		uhalfword(x0) = (0x2)			# LN: 61 | 
+141   	 0028	 01587FFF		x1 = a0h			# LN: 61 | 
+142   	 0029	 00002080		a0 = x0 * x1			# LN: 61 | 
+143   	 002A	 00004E40		a0 = a0 >> 1			# LN: 61 | 
+144   	 002B	 90090018		AnyReg(a0h, a0l)			# LN: 61 | 
+145   	 002C	 907A0000		a0l = (0x0)			# LN: 61 | 
+146   	 002D	 897A4000		a1 = (0x4000)			# LN: 61 | 
+147   	 002E	 00004480		a0 = a1 + a0			# LN: 61 | 
+148   	 002F	 8008006E		jmp (__epilogue_266)			# LN: 61 | 
+149   	 0030				else_0:			/* LN: 59 | CYCLE: 0 | RULES: () */ 
+150   	 0030	 897A6000		a1 = (0x6000)			# LN: 63 | 
+151   	 0031	 00004F08		a0 - a1			# LN: 63 | 
+152   	 0032	 84C8003E		if (a >= 0) jmp (else_1)			# LN: 63 | 
+153   	 0033	 897A2000		a1 = (0x2000)			# LN: 65 | 
+154   	 0034	 00004448		a0 = a0 - a1			# LN: 65 | 
+155   	 0035	 00587FFF		x0 = a0h			# LN: 65 | 
+156   	 0036	 814A0002		uhalfword(x1) = (0x2)			# LN: 65 | 
+157   	 0037	 00002020		a0 = x1 * x0			# LN: 65 | 
+158   	 0038	 00004E40		a0 = a0 >> 1			# LN: 65 | 
+159   	 0039	 90090018		AnyReg(a0h, a0l)			# LN: 65 | 
+160   	 003A	 907A0000		a0l = (0x0)			# LN: 65 | 
+161   	 003B	 89040000		a1 = xmem[__extractedConst_0_9 + 0]			# LN: 65 | 
+162   	 003C	 000044C0		a0 = a1 - a0			# LN: 65 | 
+163   	 003D	 8008006E		jmp (__epilogue_266)			# LN: 65 | 
+164   	 003E				else_1:			/* LN: 63 | CYCLE: 0 | RULES: () */ 
+165   	 003E	 897A6000		a1 = (0x6000)			# LN: 69 | 
+166   	 003F	 00004448		a0 = a0 - a1			# LN: 69 | 
+167   	 0040	 00587FFF		x0 = a0h			# LN: 69 | 
+168   	 0041	 814A0002		uhalfword(x1) = (0x2)			# LN: 69 | 
+169   	 0042	 00002020		a0 = x1 * x0			# LN: 69 | 
+170   	 0043	 00004E40		a0 = a0 >> 1			# LN: 69 | 
+171   	 0044	 90090018		AnyReg(a0h, a0l)			# LN: 69 | 
+172   	 0045	 907A0000		a0l = (0x0)			# LN: 69 | 
+173   	 0046	 8008006E		jmp (__epilogue_266)			# LN: 69 | 
+174   	 0047				case_1:			/* LN: 71 | CYCLE: 0 | RULES: () */ 
+175   	 0047	 897A4000		a1 = (0x4000)			# LN: 73 | 
+176   	 0048	 00004F08		a0 - a1			# LN: 73 | 
+177   	 0049	 84C8004C		if (a >= 0) jmp (else_2)			# LN: 73 | 
+178   	 004A	 88040000		a0 = xmem[__extractedConst_0_9 + 0]			# LN: 75 | 
+179   	 004B	 8008006E		jmp (__epilogue_266)			# LN: 75 | 
+180   	 004C				else_2:			/* LN: 73 | CYCLE: 0 | RULES: () */ 
+181   	 004C	 00004DC0		a0 = 0			# LN: 79 | 
+182   	 004D	 8008006E		jmp (__epilogue_266)			# LN: 79 | 
+183   	 004E				case_2:			/* LN: 81 | CYCLE: 0 | RULES: () */ 
+184   	 004E	 89040000		a1 = xmem[__extractedConst_1_2 + 0]			# LN: 83 | 
+185   	 004F	 00004F08		a0 - a1			# LN: 83 | 
+186   	 0050	 84C80053		if (a >= 0) jmp (else_3)			# LN: 83 | 
+187   	 0051	 88040000		a0 = xmem[__extractedConst_0_9 + 0]			# LN: 85 | 
+188   	 0052	 8008006E		jmp (__epilogue_266)			# LN: 85 | 
+189   	 0053				else_3:			/* LN: 83 | CYCLE: 0 | RULES: () */ 
+190   	 0053	 897A4000		a1 = (0x4000)			# LN: 87 | 
+191   	 0054	 00004F08		a0 - a1			# LN: 87 | 
+192   	 0055	 84C80061		if (a >= 0) jmp (else_4)			# LN: 87 | 
+193   	 0056	 89040000		a1 = xmem[__extractedConst_1_2 + 0]			# LN: 89 | 
+194   	 0057	 00004448		a0 = a0 - a1			# LN: 89 | 
+195   	 0058	 00587FFF		x0 = a0h			# LN: 89 | 
+196   	 0059	 814A0032		uhalfword(x1) = (0x32)			# LN: 89 | 
+197   	 005A	 00002020		a0 = x1 * x0			# LN: 89 | 
+198   	 005B	 00004E40		a0 = a0 >> 1			# LN: 89 | 
+199   	 005C	 90090018		AnyReg(a0h, a0l)			# LN: 89 | 
+200   	 005D	 907A0000		a0l = (0x0)			# LN: 89 | 
+201   	 005E	 89040000		a1 = xmem[__extractedConst_0_9 + 0]			# LN: 89 | 
+202   	 005F	 000044C0		a0 = a1 - a0			# LN: 89 | 
+203   	 0060	 8008006E		jmp (__epilogue_266)			# LN: 89 | 
+204   	 0061				else_4:			/* LN: 87 | CYCLE: 0 | RULES: () */ 
+205   	 0061	 89040000		a1 = xmem[__extractedConst_2_2 + 0]			# LN: 91 | 
+206   	 0062	 00004F08		a0 - a1			# LN: 91 | 
+207   	 0063	 84C80066		if (a >= 0) jmp (else_5)			# LN: 91 | 
+208   	 0064	 00004DC0		a0 = 0			# LN: 93 | 
+209   	 0065	 8008006E		jmp (__epilogue_266)			# LN: 93 | 
+210   	 0066				else_5:			/* LN: 91 | CYCLE: 0 | RULES: () */ 
+211   	 0066	 89040000		a1 = xmem[__extractedConst_2_2 + 0]			# LN: 97 | 
+212   	 0067	 00004448		a0 = a0 - a1			# LN: 97 | 
+213   	 0068	 00587FFF		x0 = a0h			# LN: 97 | 
+214   	 0069	 814A0032		uhalfword(x1) = (0x32)			# LN: 97 | 
+215   	 006A	 00002020		a0 = x1 * x0			# LN: 97 | 
+216   	 006B	 00004E40		a0 = a0 >> 1			# LN: 97 | 
+217   	 006C	 90090018		AnyReg(a0h, a0l)			# LN: 97 | 
+218   	 006D	 907A0000		a0l = (0x0)			# LN: 97 | 
+219   	 006E				__epilogue_266:			/* LN: 108 | CYCLE: 0 | RULES: () */ 
+220   	 006E	 81880000		ret			# LN: 108 | 
+221   						
+222   						
+223   						
+224   	 006F				_processBlock:			/* LN: 113 | CYCLE: 0 | RULES: () */ 
+225   	 006F	 A2540017		xmem[i7] = a2g; i7 += 1			# LN: 113, 113 | 
+226   	 0070	 9A540017		xmem[i7] = a2h; i7 += 1			# LN: 113, 113 | 
+227   	 0071	 92540017		xmem[i7] = a2l; i7 += 1			# LN: 113, 113 | 
+228   	 0072	 B2540017		xmem[i7] = i2; i7 += 1			# LN: 113, 113 | 
+229   	 0073	 A3540017		xmem[i7] = a3g; i7 += 1			# LN: 113, 113 | 
+230   	 0074	 9B540017		xmem[i7] = a3h; i7 += 1			# LN: 113, 113 | 
+231   	 0075	 93540017		xmem[i7] = a3l; i7 += 1			# LN: 113, 113 | 
+232   	 0076	 B3540017		xmem[i7] = i3; i7 += 1			# LN: 113, 113 | 
+233   	 0077	 B0090039		i5 = i0			# LN: 113 | 
+234   	 0078	 80450004		i0 = i4 + (0x4)			# LN: 131 | 
+235   	 0079	 28404DC2		a0 = ymem[i0]; a2 = 0			# LN: 131, 135 | 
+236   	 007A	 8100009B		do (0x10), label_end_92			# LN: 135 | 
+237   	 007B				label_begin_92:			/* LN: 135 | CYCLE: 0 | RULES: () */ 
+238   	 007B	 09714C03		a1 = i1; a3 =+ a0			# LN: 141, 145 | 
+239   	 007C	 0C794491		b0 = i5; a1 = a1 + a2			# LN: 141, 141 | 
+240   	 007D	 00004434		b0 = b0 + a2			# LN: 141 | 
+241   	 007E	 9C090030		AnyReg(i0, b0h)			# LN: 141 | 
+242   	 007F	 99090032		AnyReg(i2, a1h)			# LN: 141 | 
+243   	 0080	 84940000		y0 = ymem[i0]			# LN: 141 | 
+244   	 0081	 B8090030		i0 = i4			# LN: 141 | 
+245   	 0082	 83450003		i3 = i4 + (0x3)			# LN: 141 | 
+246   	 0083	 89940003		a1 = ymem[i3]			# LN: 141 | 
+247   	 0084	 02287FFF		i0 += 2			# LN: 141 | 
+248   	 0085	 85940000		y1 = ymem[i0]			# LN: 141 | 
+249   	 0086	 80880011		call (_lfo)			# LN: 141 | 
+250   	 0087	 89040000		a1 = xmem[__extractedConst_0_9 + 0]			# LN: 141 | 
+251   	 0088	 00584C08		x0 = a0h; a0 =+ a1			# LN: 141, 141 | 
+252   	 0089	 00002438		a0 -= y1 * x0			# LN: 141 | 
+253   	 008A	 48407FFF		x0 = a0			# LN: 141 | 
+254   	 008B	 00002400		a0 = y0 * x0			# LN: 141 | 
+255   	 008C	 B8090030		i0 = i4			# LN: 145 | 
+256   	 008D	 88D40002		ymem[i2] = a0			# LN: 141 | 
+257   	 008E	 02087FFF		i0 += 1			# LN: 145 | 
+258   	 008F	 80940000		x0 = ymem[i0]			# LN: 145 | 
+259   	 0090	 80450005		i0 = i4 + (0x5)			# LN: 145 | 
+260   	 0091	 81940000		x1 = ymem[i0]			# LN: 145 | 
+261   	 0092	 0000208B		a3 += x0 * x1			# LN: 145 | 
+262   	 0093	 4B487FFF		a0 = a3			# LN: 145 | 
+263   	 0094	 00004E00		a0 = a0 << 1			# LN: 146 | 
+264   	 0095	 89040000		a1 = xmem[__extractedConst_0_9 + 0]			# LN: 148 | 
+265   	 0096	 00004F08		a0 - a1			# LN: 148 | 
+266   	 0097	 8488009A		if (a < 0) jmp (else_6)			# LN: 148 | 
+267   	 0098	 89040000		a1 = xmem[__extractedConst_0_9 + 0]			# LN: 150 | 
+268   	 0099	 00004448		a0 = a0 - a1			# LN: 150 | 
+269   	 009A				init_latch_label_0:			/* LN: 152 | CYCLE: 0 | RULES: () */ 
+270   	 009A				endif_6:			/* LN: 148 | CYCLE: 0 | RULES: () */ 
+271   	 009A				else_6:			/* LN: 148 | CYCLE: 0 | RULES: () */ 
+272   	 009A	 894A0001		uhalfword(a1) = (0x1)			# LN: 135 | 
+273   	 009B				label_end_92:			# LN: 135 | CYCLE: 1 | RULES: ()
+274   	 009B	 0000450A		a2 = a2 + a1			# LN: 135 | 
+275   	 009C				for_end_0:			/* LN: 135 | CYCLE: 0 | RULES: () */ 
+276   	 009C	 80450004		i0 = i4 + (0x4)			# LN: 161 | 
+277   	 009D	 98D40000		ymem[i0] = a0h			# LN: 161 | 
+278   	 009E	 02177FFF		i7 -= 1			# LN: 163 | 
+279   	 009F	 B3140027		i3 = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+280   	 00A0	 93140027		a3l = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+281   	 00A1	 9B140027		a3h = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+282   	 00A2	 A3140027		a3g = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+283   	 00A3	 B2140027		i2 = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+284   	 00A4	 92140027		a2l = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+285   	 00A5	 9A140027		a2h = xmem[i7]; i7 -= 1			# LN: 163, 163 | 
+286   	 00A6	 A2140007		a2g = xmem[i7]			# LN: 163 | 
+287   	 00A7	 81880000		ret			# LN: 163 | 
+288   						
+289   						
+290   						
+291   	 00A8				_processing:			/* LN: 13 | CYCLE: 0 | RULES: () */ 
+292   	 00A8	 80880000		call (_load_tremolo)			# LN: 15 | 
+293   	 00A9	 80880000		call (_calculate_gain)			# LN: 17 | 
+294   	 00AA	 81880000		ret			# LN: 19 | 
+295   						
+296   						
+297   						
+298   	 00AB				_resetIterators:			/* LN: 3 | CYCLE: 0 | RULES: () */ 
+299   	 00AB	 A0050000		i0 = (0) + (_sampleBuffer + 0)			# LN: 5 | 
+300   	 00AC	 B0440000		xmem[_samples + 0] = i0			# LN: 5 | 
+301   	 00AD	 A0050010		i0 = (0) + (_sampleBuffer + 16)			# LN: 6 | 
+302   	 00AE	 B0440001		xmem[_samples + 1] = i0			# LN: 6 | 
+303   	 00AF	 A0050020		i0 = (0) + (_sampleBuffer + 32)			# LN: 7 | 
+304   	 00B0	 B0440002		xmem[_samples + 2] = i0			# LN: 7 | 
+305   	 00B1	 A0050030		i0 = (0) + (_sampleBuffer + 48)			# LN: 8 | 
+306   	 00B2	 B0440003		xmem[_samples + 3] = i0			# LN: 8 | 
+307   	 00B3	 A0050040		i0 = (0) + (_sampleBuffer + 64)			# LN: 9 | 
+308   	 00B4	 B0440004		xmem[_samples + 4] = i0			# LN: 9 | 
+309   	 00B5	 81880000		ret			# LN: 10 | 
+310   						(null)
+				 SYMBOL TABLE 
+
+    Name                                                                                    Type                  Value 
+
+X__extractedConst_0_9                                                           			  Unused Relocatable        X__extractedConst_0_9:0000H
+X__extractedConst_1_2                                                           			  Unused Relocatable        X__extractedConst_1_2:0000H
+X__extractedConst_2_2                                                           			  Unused Relocatable        X__extractedConst_2_2:0000H
+X_headroom                                                                      			  Unused Relocatable        X_headroom:0000H
+X_sampleBuffer                                                                  			  Unused Relocatable        X_sampleBuffer:0000H
+X_samples                                                                       			  Unused Relocatable        X_samples:0000H
+Y_dataLeft                                                                      			  Unused Relocatable        Y_dataLeft:0000H
+Y_dataRight                                                                     			  Unused Relocatable        Y_dataRight:0000H
+Y_enabled                                                                       			  Unused Relocatable        Y_enabled:0000H
+Y_headroom_gain                                                                 			  Unused Relocatable        Y_headroom_gain:0000H
+Y_input_gain                                                                    			  Unused Relocatable        Y_input_gain:0000H
+Y_output_gain                                                                   			  Unused Relocatable        Y_output_gain:0000H
+Y_selected_mode                                                                 			  Unused Relocatable        Y_selected_mode:0000H
+Y_tremoloBuffer                                                                 			  Unused Relocatable        Y_tremoloBuffer:0000H
+Y_tremoloLeftIterator                                                           			  Unused Relocatable        Y_tremoloLeftIterator:0000H
+Y_tremoloRightIterator                                                          			  Unused Relocatable        Y_tremoloRightIterator:0000H
+_COMMON_INC_PATH_                                                               					 Define                 "C:/CirrusDSP/crystal32/common/inc/"
+_DSP_                                                                           			  Unused Variable		        0 (0H)
+_LOCAL_INC_PATH_                                                                					 Define                 "inc/"
+_LOCAL_SRC_PATH_                                                                					 Define                 "src/"
+_ROUTER_INC_PATH_                                                               					 Define                 "rom_inc/"
+__CASM_VER__                                                                    			  Unused Variable		        0 (701H)
+___SegStart_X_X__extractedConst_0_9                                             			  Unused Relocatable        X__extractedConst_0_9:0000H
+___SegStart_X_X__extractedConst_1_2                                             			  Unused Relocatable        X__extractedConst_1_2:0000H
+___SegStart_X_X__extractedConst_2_2                                             			  Unused Relocatable        X__extractedConst_2_2:0000H
+___SegStart_X_X_headroom                                                        			  Unused Relocatable        X_headroom:0000H
+___SegStart_X_X_sampleBuffer                                                    			  Unused Relocatable        X_sampleBuffer:0000H
+___SegStart_X_X_samples                                                         			  Unused Relocatable        X_samples:0000H
+___SegStart_Y_Y_dataLeft                                                        			  Unused Relocatable        Y_dataLeft:0000H
+___SegStart_Y_Y_dataRight                                                       			  Unused Relocatable        Y_dataRight:0000H
+___SegStart_Y_Y_enabled                                                         			  Unused Relocatable        Y_enabled:0000H
+___SegStart_Y_Y_headroom_gain                                                   			  Unused Relocatable        Y_headroom_gain:0000H
+___SegStart_Y_Y_input_gain                                                      			  Unused Relocatable        Y_input_gain:0000H
+___SegStart_Y_Y_output_gain                                                     			  Unused Relocatable        Y_output_gain:0000H
+___SegStart_Y_Y_selected_mode                                                   			  Unused Relocatable        Y_selected_mode:0000H
+___SegStart_Y_Y_tremoloBuffer                                                   			  Unused Relocatable        Y_tremoloBuffer:0000H
+___SegStart_Y_Y_tremoloLeftIterator                                             			  Unused Relocatable        Y_tremoloLeftIterator:0000H
+___SegStart_Y_Y_tremoloRightIterator                                            			  Unused Relocatable        Y_tremoloRightIterator:0000H
+__epilogue_266                                                                  			         Relocatable         processing_GEN_0000:006EH
+__extractedConst_0_9                                                            			         Relocatable         X__extractedConst_0_9:0000H
+__extractedConst_1_2                                                            			         Relocatable         X__extractedConst_1_2:0000H
+__extractedConst_2_2                                                            			         Relocatable         X__extractedConst_2_2:0000H
+__laccum_sat_accum                                                              					 External   
+__mul_sat_laccum                                                                					 External   
+_calculate_gain                                                                 					 External   
+_cl_sin                                                                         					 External   
+_dataLeft._LFO_frequency                                                        			  Unused Relocatable        Y_dataLeft:0001H
+_dataLeft._depth                                                                			  Unused Relocatable        Y_dataLeft:0002H
+_dataLeft._inverseSampleRate                                                    			  Unused Relocatable        Y_dataLeft:0005H
+_dataLeft._lfoPhase                                                             			  Unused Relocatable        Y_dataLeft:0004H
+_dataLeft._numChannels                                                          			  Unused Relocatable        Y_dataLeft:0000H
+_dataLeft._waveform                                                             			  Unused Relocatable        Y_dataLeft:0003H
+_dataRight._LFO_frequency                                                       			  Unused Relocatable        Y_dataRight:0001H
+_dataRight._depth                                                               			  Unused Relocatable        Y_dataRight:0002H
+_dataRight._inverseSampleRate                                                   			  Unused Relocatable        Y_dataRight:0005H
+_dataRight._lfoPhase                                                            			  Unused Relocatable        Y_dataRight:0004H
+_dataRight._numChannels                                                         			  Unused Relocatable        Y_dataRight:0000H
+_dataRight._waveform                                                            			  Unused Relocatable        Y_dataRight:0003H
+_enabled                                                                        			  Public Relocatable       Y_enabled:0000H
+_headroom                                                                       			  Public Relocatable       X_headroom:0000H
+_headroom_gain                                                                  			  Public Relocatable       Y_headroom_gain:0000H
+_init                                                                           			  Public Relocatable       processing_GEN_0000:0000H
+_input_gain                                                                     			  Public Relocatable       Y_input_gain:0000H
+_lfo                                                                            			  Public Relocatable       processing_GEN_0000:0011H
+_load_tremolo                                                                   					 External   
+_output_gain                                                                    			  Public Relocatable       Y_output_gain:0000H
+_processBlock                                                                   			  Public Relocatable       processing_GEN_0000:006FH
+_processing                                                                     			  Public Relocatable       processing_GEN_0000:00A8H
+_resetIterators                                                                 			  Public Relocatable       processing_GEN_0000:00ABH
+_sampleBuffer                                                                   			  Public Relocatable       X_sampleBuffer:0000H
+_samples._sampleCenterIterator                                                  			  Unused Relocatable        X_samples:0002H
+_samples._sampleLSIterator                                                      			  Unused Relocatable        X_samples:0003H
+_samples._sampleLeftIterator                                                    			  Unused Relocatable        X_samples:0000H
+_samples._sampleRSIterator                                                      			  Unused Relocatable        X_samples:0004H
+_samples._sampleRightIterator                                                   			  Unused Relocatable        X_samples:0001H
+_selected_mode                                                                  			  Public Relocatable       Y_selected_mode:0000H
+_tremoloBuffer                                                                  			  Public Relocatable       Y_tremoloBuffer:0000H
+_tremoloLeftIterator                                                            			  Public Relocatable       Y_tremoloLeftIterator:0000H
+_tremoloRightIterator                                                           			  Public Relocatable       Y_tremoloRightIterator:0000H
+case_0                                                                          			         Relocatable         processing_GEN_0000:0024H
+case_1                                                                          			         Relocatable         processing_GEN_0000:0047H
+case_2                                                                          			         Relocatable         processing_GEN_0000:004EH
+else_0                                                                          			         Relocatable         processing_GEN_0000:0030H
+else_1                                                                          			         Relocatable         processing_GEN_0000:003EH
+else_2                                                                          			         Relocatable         processing_GEN_0000:004CH
+else_3                                                                          			         Relocatable         processing_GEN_0000:0053H
+else_4                                                                          			         Relocatable         processing_GEN_0000:0061H
+else_5                                                                          			         Relocatable         processing_GEN_0000:0066H
+else_6                                                                          			         Relocatable         processing_GEN_0000:009AH
+endif_6                                                                         			  Unused Relocatable        processing_GEN_0000:009AH
+for_end_0                                                                       			  Unused Relocatable        processing_GEN_0000:009CH
+init_latch_label_0                                                              			  Unused Relocatable        processing_GEN_0000:009AH
+label_begin_92                                                                  			  Unused Relocatable        processing_GEN_0000:007BH
+label_end_92                                                                    			         Relocatable         processing_GEN_0000:009BH
+
+	       SEGMENTS:
+
+Size			  Name										 Class
+0000H	 __INIT                                  			 CODE                                    
+0005H	 X_samples                               			 X_OVLY                                  
+0006H	 Y_dataRight                             			 Y_OVLY                                  
+0001H	 X__extractedConst_0_9                   			 X_OVLY                                  
+0001H	 X__extractedConst_1_2                   			 X_OVLY                                  
+0001H	 X__extractedConst_2_2                   			 X_OVLY                                  
+0006H	 Y_dataLeft                              			 Y_OVLY                                  
+0001H	 Y_enabled                               			 Y_OVLY                                  
+0001H	 X_headroom                              			 X_OVLY                                  
+0001H	 Y_headroom_gain                         			 Y_OVLY                                  
+0001H	 Y_input_gain                            			 Y_OVLY                                  
+0001H	 Y_output_gain                           			 Y_OVLY                                  
+0080H	 X_sampleBuffer                          			 X_OVLY                                  
+0001H	 Y_selected_mode                         			 Y_OVLY                                  
+0020H	 Y_tremoloBuffer                         			 Y_OVLY                                  
+0001H	 Y_tremoloLeftIterator                   			 Y_OVLY                                  
+0001H	 Y_tremoloRightIterator                  			 Y_OVLY                                  
+00B6H	 processing_GEN_0000                     			 CODE_OVLY                               

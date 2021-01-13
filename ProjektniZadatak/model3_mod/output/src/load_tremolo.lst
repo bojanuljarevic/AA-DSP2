@@ -1,0 +1,341 @@
+1     	 0000					.public _load_tremolo
+2     	 0000					.extern _dataLeft
+3     	 0000					.extern _dataRight
+4     	 0000					.extern _samples
+5     	 0000					.extern _selected_mode
+6     	 0000					.extern _tremoloBuffer
+7     	 0000					.extern _tremoloLeftIterator
+8     	 0000					.extern _tremoloRightIterator
+9     	 0000					.extern _processBlock
+10    	 0000					.extern _resetIterators
+11    							
+12    							.xdata_ovly
+12     >> start of macro: .xdata_ovly
+1+    									seg_single , "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_X_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "X_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_X_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+13    	 0000				__extractedConst_0_9
+14    	 0000					.dw  (0x7fffffff)
+	 0000	 7FFFFFFF	 
+15    							.xdata_ovly
+15     >> start of macro: .xdata_ovly
+1+    									seg_single , "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_X_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "X_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_X_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+16    	 0000				__extractedConst_1_2
+17    	 0000					.dw  (0x3d70a3d7)
+	 0000	 3D70A3D7	 
+18    							.xdata_ovly
+18     >> start of macro: .xdata_ovly
+1+    									seg_single , "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_X_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "X_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_X_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+19    	 0000				__extractedConst_2_2
+20    	 0000					.dw  (0x7d70a3d7)
+	 0000	 7D70A3D7	 
+21    							.xdata_ovly
+21     >> start of macro: .xdata_ovly
+1+    									seg_single , "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_X_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "X_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_X_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+22    	 0000				__extractedConst_3_2
+23    	 0000					.dw  (0x4026e547)
+	 0000	 4026E547	 
+24    							.ydata_ovly
+24     >> start of macro: .ydata_ovly
+1+    									seg_single , "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_Y_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "Y_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_Y_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+25    	 0000				_dataLeft
+26    	 0000					.bss (0x6)
+27    							.ydata_ovly
+27     >> start of macro: .ydata_ovly
+1+    									seg_single , "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_Y_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "Y_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_Y_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+28    	 0000				_dataRight
+29    	 0000					.bss (0x6)
+30    						
+31    							.xdata_ovly
+31     >> start of macro: .xdata_ovly
+1+    									seg_single , "X_OVLY", X
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_X_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "X_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_X_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .xdata_ovly
+32    	 0000				_samples
+33    	 0000					.bss (0x5)
+34    							.ydata_ovly
+34     >> start of macro: .ydata_ovly
+1+    									seg_single , "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_Y_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "Y_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_Y_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+35    	 0000				_tremoloBuffer
+36    	 0000					.bss (0x20)
+37    							.ydata_ovly
+37     >> start of macro: .ydata_ovly
+1+    									seg_single , "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_Y_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "Y_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_Y_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+38    	 0000				_tremoloLeftIterator
+39    	 0000					.dw _tremoloBuffer
+	 0000	 00000000	 
+40    							.ydata_ovly
+40     >> start of macro: .ydata_ovly
+1+    									seg_single , "Y_OVLY", Y
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_Y_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "Y_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_Y_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .ydata_ovly
+41    	 0000				_tremoloRightIterator
+42    	 0000					.dw _tremoloBuffer+16
+	 0000	 00000010	 
+43    							.code_ovly
+43     >> start of macro: .code_ovly
+1+    									seg_single , "CODE_OVLY", CODE
+1+     >> start of macro: seg_single
+1+    						  .if ( "" != "" ) & defined( ___SegStart_CODE_ )
+2+    						    segment
+3+    						  .else
+4+    						    segment "CODE_OVLY"
+5+    							.if "" != ""
+6+    						___SegStart_CODE_
+7+    							.endif
+8+    						  .endif
+9+    							#RememberSegmentType
+10+    >> end of macro: seg_single
+2+     >> end of macro: .code_ovly
+44    						
+45    	 0000				_load_tremolo:			/* LN: 44 | CYCLE: 0 | RULES: () */ 
+46    	 0000	 BB540007		xmem[i7] = i7			# LN: 44 | 
+47    							#i7 += 1			# LN: 44 | 
+48    	 0001	 87750002		i7 = i7 + (0x2)			# LN: 44 | 
+49    	 0002				cline_44_1:			/* LN: 48 | CYCLE: 0 | RULES: () */ 
+50    	 0002	 80880000		call (_resetIterators)			# LN: 48 | 
+51    	 0003				cline_48_0:			/* LN: 50 | CYCLE: 0 | RULES: () */ 
+52    	 0003	 88840000		a0 = ymem[_selected_mode]			# LN: 50 | 
+53    	 0004	 00004E80		a0 & a0			# LN: 50 | 
+54    	 0005	 84080038		if (a == 0) jmp (__epilogue_270)			# LN: 50 | 
+55    	 0006				cline_50_0:			/* LN: 53 | CYCLE: 0 | RULES: () */ 
+56    	 0006	 90750001		i0 = i7 - (0x1)			# LN: 53 | 
+57    	 0007	 00004DC0		a0 = 0			# LN: 53 | 
+58    	 0008	 98540000		xmem[i0] = a0h			# LN: 53 | 
+59    	 0009	 8100002A		do (0x10), label_end_93			# LN: 53 | 
+60    	 000A				cline_53_5:			/* LN: 55 | CYCLE: 0 | RULES: () */ 
+61    	 000A				label_begin_93:			/* LN: 53 | CYCLE: 0 | RULES: () */ 
+62    	 000A	 B0040000		i0 = xmem[_samples]			# LN: 55 | 
+63    	 000B	 80040000		x0 = xmem[__extractedConst_3_2]			# LN: 55 | 
+64    	 000C	 81140000		x1 = xmem[i0]			# LN: 55 | 
+65    	 000D	 00002080		a0 = x0 * x1			# LN: 55 | 
+66    	 000E	 A0050000		i0 = (0) + (_tremoloLeftIterator)			# LN: 55 | 
+67    	 000F	 B0940000		i0 = ymem[i0]			# LN: 55 | 
+68    	 0010	 B1040000		i1 = xmem[_samples]			# LN: 55 | 
+69    	 0011	 88D40000		ymem[i0] = a0			# LN: 55 | 
+70    	 0012	 02097FFF		i1 += 1			# LN: 55 | 
+71    	 0013	 B1440000		xmem[_samples] = i1			# LN: 55 | 
+72    	 0014				cline_55_0:			/* LN: 56 | CYCLE: 0 | RULES: () */ 
+73    	 0014	 B0040001		i0 = xmem[_samples + 1]			# LN: 56 | 
+74    	 0015	 80040000		x0 = xmem[__extractedConst_3_2 + 0]			# LN: 56 | 
+75    	 0016	 81140000		x1 = xmem[i0]			# LN: 56 | 
+76    	 0017	 00002080		a0 = x0 * x1			# LN: 56 | 
+77    	 0018	 A0050000		i0 = (0) + (_tremoloRightIterator)			# LN: 56 | 
+78    	 0019	 B0940000		i0 = ymem[i0]			# LN: 56 | 
+79    	 001A	 B1040001		i1 = xmem[_samples + 1]			# LN: 56 | 
+80    	 001B	 88D40000		ymem[i0] = a0			# LN: 56 | 
+81    	 001C	 02097FFF		i1 += 1			# LN: 56 | 
+82    	 001D	 B0840000		i0 = ymem[_tremoloLeftIterator]			# LN: 58 | 
+83    	 001E	 B1440001		xmem[_samples + 1] = i1			# LN: 56 | 
+84    	 001F	 02087FFF		i0 += 1			# LN: 58 | 
+85    	 0020	 B0C40000		ymem[_tremoloLeftIterator] = i0			# LN: 58 | 
+86    	 0021				cline_58_0:			/* LN: 59 | CYCLE: 0 | RULES: () */ 
+87    	 0021	 B0840000		i0 = ymem[_tremoloRightIterator]			# LN: 59 | 
+88    	 0022	 00007FFF		nop #empty cycle
+89    	 0023	 02087FFF		i0 += 1			# LN: 59 | 
+90    	 0024	 B0C40000		ymem[_tremoloRightIterator + 0] = i0			# LN: 59 | 
+91    	 0025				cline_59_1:			/* LN: 53 | CYCLE: 0 | RULES: () */ 
+92    	 0025				init_latch_label_1:			/* LN: 60 | CYCLE: 0 | RULES: () */ 
+93    	 0025	 90750001		i0 = i7 - (0x1)			# LN: 53 | 
+94    	 0026	 88140000		a0 = xmem[i0]			# LN: 53 | 
+95    	 0027	 894A0001		uhalfword(a1) = (0x1)			# LN: 53 | 
+96    	 0028	 00004408		a0 = a0 + a1			# LN: 53 | 
+97    	 0029	 90750001		i0 = i7 - (0x1)			# LN: 53 | 
+98    	 002A				label_end_93:			# LN: 53 | CYCLE: 5 | RULES: ()
+99    	 002A	 98540000		xmem[i0] = a0h			# LN: 53 | 
+100   	 002B				cline_53_6:			/* LN: 61 | CYCLE: 0 | RULES: () */ 
+101   	 002B				for_end_1:			/* LN: 53 | CYCLE: 0 | RULES: () */ 
+102   	 002B	 B04A0000		i0 = (_tremoloBuffer + 0)			# LN: 61 | 
+103   	 002C	 B0C40000		ymem[_tremoloLeftIterator + 0] = i0			# LN: 61 | 
+104   	 002D				cline_61_1:			/* LN: 62 | CYCLE: 0 | RULES: () */ 
+105   	 002D	 B04A0010		i0 = (_tremoloBuffer + 16)			# LN: 62 | 
+106   	 002E	 B0C40000		ymem[_tremoloRightIterator + 0] = i0			# LN: 62 | 
+107   	 002F				cline_62_0:			/* LN: 64 | CYCLE: 0 | RULES: () */ 
+108   	 002F	 B0840000		i0 = ymem[_tremoloLeftIterator + 0]			# LN: 64 | 
+109   	 0030	 B1840000		i1 = ymem[_tremoloLeftIterator + 0]			# LN: 64 | 
+110   	 0031	 B84A0000		i4 = (_dataLeft)			# LN: 64 | 
+111   	 0032	 80880000		call (_processBlock)			# LN: 64 | 
+112   	 0033				cline_64_0:			/* LN: 65 | CYCLE: 0 | RULES: () */ 
+113   	 0033	 B0840000		i0 = ymem[_tremoloRightIterator + 0]			# LN: 65 | 
+114   	 0034	 B1840000		i1 = ymem[_tremoloRightIterator + 0]			# LN: 65 | 
+115   	 0035	 B84A0000		i4 = (_dataRight)			# LN: 65 | 
+116   	 0036	 80880000		call (_processBlock)			# LN: 65 | 
+117   	 0037	 80080038		jmp (endif_7)			# LN: 65 | 
+118   	 0038				cline_65_1:			/* LN: 68 | CYCLE: 0 | RULES: () */ 
+119   	 0038				endif_7:			/* LN: 50 | CYCLE: 0 | RULES: () */ 
+120   	 0038				__epilogue_270:			/* LN: 68 | CYCLE: 0 | RULES: () */ 
+121   	 0038	 97750002		i7 = i7 - (0x2)			# LN: 68 | 
+122   							#i7 -= 1			# LN: 68 | 
+123   	 0039	 81880000		ret			# LN: 68 | 124   						(null)
+				 SYMBOL TABLE 
+
+    Name                                                                                    Type                  Value 
+
+_COMMON_INC_PATH_                                                               					 Define                 "C:/CirrusDSP/crystal32/common/inc/"
+_DSP_                                                                           			  Unused Variable		        0 (0H)
+_LOCAL_INC_PATH_                                                                					 Define                 "inc/"
+_LOCAL_SRC_PATH_                                                                					 Define                 "src/"
+_ROUTER_INC_PATH_                                                               					 Define                 "rom_inc/"
+__CASM_VER__                                                                    			  Unused Variable		        0 (701H)
+__epilogue_270                                                                  			         Relocatable         load_tremolo_GEN_0010:0038H
+__extractedConst_0_9                                                            			  Unused Relocatable        load_tremolo_GEN_0000:0000H
+__extractedConst_1_2                                                            			  Unused Relocatable        load_tremolo_GEN_0001:0000H
+__extractedConst_2_2                                                            			  Unused Relocatable        load_tremolo_GEN_0002:0000H
+__extractedConst_3_2                                                            			         Relocatable         load_tremolo_GEN_0003:0000H
+_dataLeft                                                                       			         Relocatable         load_tremolo_GEN_0004:0000H
+_dataRight                                                                      			         Relocatable         load_tremolo_GEN_0005:0000H
+_load_tremolo                                                                   			  Public Relocatable       load_tremolo_GEN_0010:0000H
+_processBlock                                                                   					 External   
+_resetIterators                                                                 					 External   
+_samples                                                                        			         Relocatable         load_tremolo_GEN_0006:0000H
+_selected_mode                                                                  					 External   
+_tremoloBuffer                                                                  			         Relocatable         load_tremolo_GEN_0007:0000H
+_tremoloLeftIterator                                                            			         Relocatable         load_tremolo_GEN_0008:0000H
+_tremoloRightIterator                                                           			         Relocatable         load_tremolo_GEN_0009:0000H
+cline_44_1                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0002H
+cline_48_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0003H
+cline_50_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0006H
+cline_53_5                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:000AH
+cline_53_6                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:002BH
+cline_55_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0014H
+cline_58_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0021H
+cline_59_1                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0025H
+cline_61_1                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:002DH
+cline_62_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:002FH
+cline_64_0                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0033H
+cline_65_1                                                                      			  Unused Relocatable        load_tremolo_GEN_0010:0038H
+endif_7                                                                         			         Relocatable         load_tremolo_GEN_0010:0038H
+for_end_1                                                                       			  Unused Relocatable        load_tremolo_GEN_0010:002BH
+init_latch_label_1                                                              			  Unused Relocatable        load_tremolo_GEN_0010:0025H
+label_begin_93                                                                  			  Unused Relocatable        load_tremolo_GEN_0010:000AH
+label_end_93                                                                    			         Relocatable         load_tremolo_GEN_0010:002AH
+
+	       SEGMENTS:
+
+Size			  Name										 Class
+0000H	 __INIT                                  			 CODE                                    
+0001H	 load_tremolo_GEN_0000                   			 X_OVLY                                  
+0001H	 load_tremolo_GEN_0001                   			 X_OVLY                                  
+0001H	 load_tremolo_GEN_0002                   			 X_OVLY                                  
+0001H	 load_tremolo_GEN_0003                   			 X_OVLY                                  
+0006H	 load_tremolo_GEN_0004                   			 Y_OVLY                                  
+0006H	 load_tremolo_GEN_0005                   			 Y_OVLY                                  
+0005H	 load_tremolo_GEN_0006                   			 X_OVLY                                  
+0020H	 load_tremolo_GEN_0007                   			 Y_OVLY                                  
+0001H	 load_tremolo_GEN_0008                   			 Y_OVLY                                  
+0001H	 load_tremolo_GEN_0009                   			 Y_OVLY                                  
+003AH	 load_tremolo_GEN_0010                   			 CODE_OVLY                               

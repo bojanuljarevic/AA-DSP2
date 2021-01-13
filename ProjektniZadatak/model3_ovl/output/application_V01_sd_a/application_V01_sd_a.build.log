@@ -1,0 +1,49 @@
+============= BUILDING STARTED ============
+  Project: model3_ovl
+  Creating configuration for: V01:sd_a/application
+===========================================
+Assembling .a and .s files...
+C:/CirrusDSP/clide/workspace/model3_ovl/gen/src/model3_ovl_odt.a
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_ovl/gen/src/model3_ovl_odt.a
+ --debug
+ -c
+ -s
+ -e
+ --cdl
+ -D_TOOLS_VERSION_=0x0701
+ -D_SLOT_=0
+ -D_OVLY_=application
+ -D_OVLY_REVISION_=010000
+ -D_VERSION_=01
+ -D_DSP_=a
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/CS48L2X/common/inc/
+ -D_TARGET_FAMILY_=CS48L2X
+ -D_MUI_VERSION_=010000
+ -IC:/CirrusDSP/include/
+ -lC:/CirrusDSP/clide/workspace/model3_ovl/output/application_V01_sd_a/gen/src/model3_ovl_odt.lst
+ -oC:/CirrusDSP/clide/workspace/model3_ovl/output/application_V01_sd_a/gen/src/model3_ovl_odt.O
+ -iC:/CirrusDSP/CS48L2X/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [86]: Symbol _MEM_MODEL_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [89]: Symbol _MEM_MODEL_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [92]: Symbol _MEM_MODEL_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [95]: Symbol _MEM_MODEL_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [98]: Symbol _CHIP_REQUIRED_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [101]: Symbol _CHIP_REQUIRED_ is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [103]: Symbol _MEM_MODEL_ID_ is undefined
+     [exec] Error #100: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [103]: syntax error at: x_CHIP00_MEM_MODEL_ID_
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [151]: Symbol OVLY_ENV_ID is un
+     [exec] defined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [160]: Symbol OVLY_ENV_ID is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [166]: Symbol OVLY_ENV_ID is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [172]: Symbol OVLY_ENV_ID is undefined
+     [exec] Error #124: C:/CirrusDSP/CS48L2X/common/inc/ovly_version.h [178]: Symbol OVLY_ENV_ID is undefined
+     [exec]     13 errors.
+     [exec] Errors encountered, no object file emitted
+
+BUILD FAILED
+C:\CirrusDSP\clide\workspace\model3_ovl\output\application_V01_sd_a\application_V01_sd_a.build.xml:5: exec returned: 13
+
+Total time: 0 seconds

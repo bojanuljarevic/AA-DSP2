@@ -1,0 +1,305 @@
+============= BUILDING STARTED ============
+  Project: model3_mod
+  Creating standalone configuration
+===========================================
+Compiling .c files...
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\model3_mod_main.O
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\model3_mod_main.s
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\model3_mod_os_interface.O
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\model3_mod_os_interface.s
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\processing.O
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\processing.s
+C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_main.c
+C:/CirrusDSP/bin/ccc2 C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_main.c
+ -S
+ -ruf
+ -fcse
+ -fprc
+ -fcompact
+ -funsafe-loop-optimizations
+ -edi
+ -emit-hints
+ -ira
+ -fconst-pool=X
+ -fno0init
+ -femit-asm-struct
+ -cdl
+ -fseparateVarSegments
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+     [exec] "C:/CirrusDSP/include/stdio.h", line 8: warning #1108: #warning directive: Functionality of stdio.h header file is not fully supported
+     [exec]   #warning Functionality of stdio.h header file is not fully supported
+     [exec]    ^
+     [exec] 
+     [exec] "C:/CirrusDSP/include/string.h", line 8: warning #1108: #warning directive: Functionality of string.h header file is not fully supported
+     [exec]   #warning Functionality of string.h header file is not fully supported
+     [exec]    ^
+     [exec] 
+     [exec] "C:/CirrusDSP/include/string.h", line 13: warning #303: typedef name has already been"C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group:  . Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: ,. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: 0. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 9 declared (with same type)
+     [exec]   typedef unsigned int size_t;
+     [exec]                        ^
+     [exec] 
+     [exec] 0: warning: Unrecognised register group:  . Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: ,. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: 0. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 145: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 43: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 41: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 45: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 44: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: Call to runtime function __mul_sat_laccum. Look at the separate document for information how to avoid this call.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: Call to runtime function __laccum_sat_accum. Look at the separate document for information how to avoid this call.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 145: info: SRS is used at this line.
+     [exec] 
+     [exec] FRONT END TIME: 0 seconds
+     [exec] BACK  END TIME: 1 seconds
+     [exec] 
+C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_os_interface.c
+C:/CirrusDSP/bin/ccc2 C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_os_interface.c
+ -S
+ -ruf
+ -fcse
+ -fprc
+ -fcompact
+ -funsafe-loop-optimizations
+ -edi
+ -emit-hints
+ -ira
+ -fconst-pool=X
+ -fno0init
+ -femit-asm-struct
+ -cdl
+ -fseparateVarSegments
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+     [exec] 
+     [exec] FRONT END TIME: 0 seconds
+     [exec] BACK  END TIME: 0 seconds
+     [exec] 
+C:/CirrusDSP/clide/workspace/model3_mod/src/processing.c
+C:/CirrusDSP/bin/ccc2 C:/CirrusDSP/clide/workspace/model3_mod/src/processing.c
+ -S
+ -ruf
+ -fcse
+ -fprc
+ -fcompact
+ -funsafe-loop-optimizations
+ -edi
+ -emit-hints
+ -ira
+ -fconst-pool=X
+ -fno0init
+ -femit-asm-struct
+ -cdl
+ -fseparateVarSegments
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+     [exec] "C:/CirrusDSP/include/stdio.h", line 8: warning #1108: #warning directive: Functionality of stdio.h header file is not fully supported
+     [exec]   #warning Functionality of stdio.h header file is not fully supported
+     [exec]    ^
+     [exec] 
+     [exec] "C:/CirrusDSP/include/string.h", line 8: warning #1108: #warning directive: Functionality of string.h header file is not fully supported
+     [exec]   #warning Functionality of string.h header file is not fully supported
+     [exec]    ^
+     [exec] 
+     [exec] "C:/CirrusDSP/include/string.h", line 13: warning #303: typedef name has already been"C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group:  . Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: ,. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: 0. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 9 declared (with same type)
+     [exec]   typedef unsigned int size_t;
+     [exec]                        ^
+     [exec] 
+     [exec] 0: warning: Unrecognised register group:  . Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: ,. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/include/dsplib\dsp_math.h", line 90: warning: Unrecognised register group: 0. Request skipped.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 44: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 43: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 41: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 45: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 145: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: This array indexing or structure field access is not compiled to utilize AGU. Compiler might optimize it better if you code it using pointers.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: Call to runtime function __mul_sat_laccum. Look at the separate document for information how to avoid this call.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: Call to runtime function __laccum_sat_accum. Look at the separate document for information how to avoid this call.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 104: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 141: info: SRS is used at this line.
+     [exec] 
+     [exec] "C:/CirrusDSP/clide/workspace/model3_mod/inc/tremolo.h", line 145: info: SRS is used at this line.
+     [exec] 
+     [exec] FRONT END TIME: 0 seconds
+     [exec] BACK  END TIME: 0 seconds
+     [exec] 
+Assembling .a and .s files...
+C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s
+ --debug
+ -c
+ -s
+ -e
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -lC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.lst
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s
+ --debug
+ -c
+ -s
+ -e
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -lC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.lst
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s
+ --debug
+ -c
+ -s
+ -e
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -lC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.lst
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\load_tremolo.O
+C:/CirrusDSP/clide/workspace/model3_mod/src/load_tremolo.a
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_mod/src/load_tremolo.a
+ --debug
+ -c
+ -s
+ -e
+ --cdl
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -lC:/CirrusDSP/clide/workspace/model3_mod/output/src/load_tremolo.lst
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/load_tremolo.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+   [delete] Deleting: C:\CirrusDSP\clide\workspace\model3_mod\output\src\calculate_gain.O
+C:/CirrusDSP/clide/workspace/model3_mod/src/calculate_gain.a
+C:/CirrusDSP/bin/casm C:/CirrusDSP/clide/workspace/model3_mod/src/calculate_gain.a
+ --debug
+ -c
+ -s
+ -e
+ --cdl
+ -D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/
+ -IC:/CirrusDSP/include/
+ -IC:/CirrusDSP/include/dsplib/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/
+ -IC:/CirrusDSP/clide/workspace/model3_mod/inc
+ -IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc
+ -lC:/CirrusDSP/clide/workspace/model3_mod/output/src/calculate_gain.lst
+ -oC:/CirrusDSP/clide/workspace/model3_mod/output/src/calculate_gain.O
+ -iC:/CirrusDSP/crystal32/common/inc/base.h
+ -D_LOCAL_SRC_PATH_=src/
+ -D_LOCAL_INC_PATH_=inc/
+ -D_ROUTER_INC_PATH_=rom_inc/
+
+BUILD SUCCESSFUL
+Total time: 5 seconds

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project basedir="C:/CirrusDSP/clide/workspace/model3_mod" name="model3_mod">
+	<target description="Compiling .c files..." name="ccc">
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.O"/>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s"/>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.O"/>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s"/>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.O"/>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s"/>
+		<exec executable="C:/CirrusDSP/bin/ccc2" failonerror="true" resultProperty="cccResult0">
+			<env key="PATH" path="C:/CirrusDSP/bin/:${env.PATH}"/>
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_main.c"/>
+			<arg value="-S"/>
+			<arg value="-ruf"/>
+			<arg value="-fcse"/>
+			<arg value="-fprc"/>
+			<arg value="-fcompact"/>
+			<arg value="-funsafe-loop-optimizations"/>
+			<arg value="-edi"/>
+			<arg value="-emit-hints"/>
+			<arg value="-ira"/>
+			<arg value="-fconst-pool=X"/>
+			<arg value="-fno0init"/>
+			<arg value="-femit-asm-struct"/>
+			<arg value="-cdl"/>
+			<arg value="-fseparateVarSegments"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<exec executable="C:/CirrusDSP/bin/ccc2" failonerror="true" resultProperty="cccResult1">
+			<env key="PATH" path="C:/CirrusDSP/bin/:${env.PATH}"/>
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/src/model3_mod_os_interface.c"/>
+			<arg value="-S"/>
+			<arg value="-ruf"/>
+			<arg value="-fcse"/>
+			<arg value="-fprc"/>
+			<arg value="-fcompact"/>
+			<arg value="-funsafe-loop-optimizations"/>
+			<arg value="-edi"/>
+			<arg value="-emit-hints"/>
+			<arg value="-ira"/>
+			<arg value="-fconst-pool=X"/>
+			<arg value="-fno0init"/>
+			<arg value="-femit-asm-struct"/>
+			<arg value="-cdl"/>
+			<arg value="-fseparateVarSegments"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<exec executable="C:/CirrusDSP/bin/ccc2" failonerror="true" resultProperty="cccResult2">
+			<env key="PATH" path="C:/CirrusDSP/bin/:${env.PATH}"/>
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/src/processing.c"/>
+			<arg value="-S"/>
+			<arg value="-ruf"/>
+			<arg value="-fcse"/>
+			<arg value="-fprc"/>
+			<arg value="-fcompact"/>
+			<arg value="-funsafe-loop-optimizations"/>
+			<arg value="-edi"/>
+			<arg value="-emit-hints"/>
+			<arg value="-ira"/>
+			<arg value="-fconst-pool=X"/>
+			<arg value="-fno0init"/>
+			<arg value="-femit-asm-struct"/>
+			<arg value="-cdl"/>
+			<arg value="-fseparateVarSegments"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<condition property="compileError">
+			<or>
+				<not>
+					<equals arg1="${cccResult0}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${cccResult1}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${cccResult2}" arg2="0"/>
+				</not>
+			</or>
+		</condition>
+	</target>
+	<target if="compileError" name="checkCompileErrors">
+		<fail message="Please check compiler errors."/>
+	</target>
+	<target description="Assembling .a and .s files..." name="casm">
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.O"/>
+		<exec executable="C:/CirrusDSP/bin/casm" failonerror="true" resultProperty="casmResult0">
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.s"/>
+			<arg value="--debug"/>
+			<arg value="-c"/>
+			<arg value="-s"/>
+			<arg value="-e"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-lC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.lst"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/processing.O"/>
+			<arg value="-iC:/CirrusDSP/crystal32/common/inc/base.h"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.O"/>
+		<exec executable="C:/CirrusDSP/bin/casm" failonerror="true" resultProperty="casmResult1">
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.s"/>
+			<arg value="--debug"/>
+			<arg value="-c"/>
+			<arg value="-s"/>
+			<arg value="-e"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-lC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.lst"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_os_interface.O"/>
+			<arg value="-iC:/CirrusDSP/crystal32/common/inc/base.h"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.O"/>
+		<exec executable="C:/CirrusDSP/bin/casm" failonerror="true" resultProperty="casmResult2">
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.s"/>
+			<arg value="--debug"/>
+			<arg value="-c"/>
+			<arg value="-s"/>
+			<arg value="-e"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-lC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.lst"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/model3_mod_main.O"/>
+			<arg value="-iC:/CirrusDSP/crystal32/common/inc/base.h"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/load_tremolo.O"/>
+		<exec executable="C:/CirrusDSP/bin/casm" failonerror="true" resultProperty="casmResult3">
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/src/load_tremolo.a"/>
+			<arg value="--debug"/>
+			<arg value="-c"/>
+			<arg value="-s"/>
+			<arg value="-e"/>
+			<arg value="--cdl"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-lC:/CirrusDSP/clide/workspace/model3_mod/output/src/load_tremolo.lst"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/load_tremolo.O"/>
+			<arg value="-iC:/CirrusDSP/crystal32/common/inc/base.h"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<delete file="C:/CirrusDSP/clide/workspace/model3_mod/output/src/calculate_gain.O"/>
+		<exec executable="C:/CirrusDSP/bin/casm" failonerror="true" resultProperty="casmResult4">
+			<arg value="C:/CirrusDSP/clide/workspace/model3_mod/src/calculate_gain.a"/>
+			<arg value="--debug"/>
+			<arg value="-c"/>
+			<arg value="-s"/>
+			<arg value="-e"/>
+			<arg value="--cdl"/>
+			<arg value="-D_COMMON_INC_PATH_=C:/CirrusDSP/crystal32/common/inc/"/>
+			<arg value="-IC:/CirrusDSP/include/"/>
+			<arg value="-IC:/CirrusDSP/include/dsplib/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc/"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/inc"/>
+			<arg value="-IC:/CirrusDSP/clide/workspace/model3_mod/gen/inc"/>
+			<arg value="-lC:/CirrusDSP/clide/workspace/model3_mod/output/src/calculate_gain.lst"/>
+			<arg value="-oC:/CirrusDSP/clide/workspace/model3_mod/output/src/calculate_gain.O"/>
+			<arg value="-iC:/CirrusDSP/crystal32/common/inc/base.h"/>
+			<arg value="-D_LOCAL_SRC_PATH_=src/"/>
+			<arg value="-D_LOCAL_INC_PATH_=inc/"/>
+			<arg value="-D_ROUTER_INC_PATH_=rom_inc/"/>
+		</exec>
+		<condition property="assemblyError">
+			<or>
+				<not>
+					<equals arg1="${casmResult0}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${casmResult1}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${casmResult2}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${casmResult3}" arg2="0"/>
+				</not>
+				<not>
+					<equals arg1="${casmResult4}" arg2="0"/>
+				</not>
+			</or>
+		</condition>
+	</target>
+	<target if="assemblyError" name="checkAssemblyErrors">
+		<fail message="Please check assembler errors."/>
+	</target>
+</project>

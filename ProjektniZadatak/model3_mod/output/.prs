@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings built="true" last_build_time="1608130878924">
+	<dependencies>
+		<source_file last_build_time="1608130877955" path="src/load_tremolo.a"/>
+		<source_file last_build_time="1608130876830" path="src/model3_mod_os_interface.c">
+			<dependency>../inc/model3_mod_impl.h</dependency>
+			<dependency>../../../../include/stdfix.h</dependency>
+			<dependency>../../../../include/scaling_coeff.h</dependency>
+			<dependency>../../../../include/dsplib/cl_os.h</dependency>
+			<dependency>../../../../include/dsplib/platform_support.h</dependency>
+			<dependency>../../../../include/stdbool.h</dependency>
+			<dependency>../gen/inc/model3_mod_mcv.h</dependency>
+			<dependency>../../../../include/dsplib/meter.h</dependency>
+			<dependency>../../../../include/dsplib/response.h</dependency>
+			<dependency>../gen/inc/model3_mod_module.h</dependency>
+		</source_file>
+		<source_file last_build_time="1608130878502" path="src/calculate_gain.a"/>
+		<source_file last_build_time="1608130877424" path="src/model3_mod_main.c">
+			<dependency>../inc/model3_mod_impl.h</dependency>
+			<dependency>../../../../include/stdfix.h</dependency>
+			<dependency>../../../../include/scaling_coeff.h</dependency>
+			<dependency>../../../../include/dsplib/cl_os.h</dependency>
+			<dependency>../../../../include/dsplib/platform_support.h</dependency>
+			<dependency>../../../../include/stdbool.h</dependency>
+			<dependency>../gen/inc/model3_mod_mcv.h</dependency>
+			<dependency>../../../../include/dsplib/meter.h</dependency>
+			<dependency>../../../../include/dsplib/response.h</dependency>
+			<dependency>../gen/inc/model3_mod_module.h</dependency>
+			<dependency>../inc/processing.h</dependency>
+			<dependency>../../../../include/stdio.h</dependency>
+			<dependency>../../../../include/dsplib/wavefile.h</dependency>
+			<dependency>../../../../include/string.h</dependency>
+			<dependency>../inc/common.h</dependency>
+			<dependency>../inc/stdfix_emu.h</dependency>
+			<dependency>../inc/tremolo.h</dependency>
+			<dependency>../../../../include/dsplib/dsp_math.h</dependency>
+			<dependency>../../../../include/dsplib/dsp_types.h</dependency>
+		</source_file>
+		<source_file last_build_time="1608130876299" path="src/processing.c">
+			<dependency>../inc/processing.h</dependency>
+			<dependency>../../../../include/stdio.h</dependency>
+			<dependency>../../../../include/dsplib/wavefile.h</dependency>
+			<dependency>../../../../include/stdfix.h</dependency>
+			<dependency>../../../../include/scaling_coeff.h</dependency>
+			<dependency>../../../../include/string.h</dependency>
+			<dependency>../inc/common.h</dependency>
+			<dependency>../inc/stdfix_emu.h</dependency>
+			<dependency>../inc/tremolo.h</dependency>
+			<dependency>../../../../include/dsplib/dsp_math.h</dependency>
+			<dependency>../../../../include/dsplib/dsp_types.h</dependency>
+		</source_file>
+	</dependencies>
+</settings>
